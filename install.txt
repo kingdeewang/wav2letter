@@ -1,0 +1,17 @@
+ #Download and build kenlm
+ sudo apt-get install liblzma-dev libbz2-dev libzstd-dev
+ ~/$> git clone https://github.com/kpu/kenlm.git
+~/$> cd kenlm
+~/kenlm> mkdir build
+~/kenlm/build$> cmake .. 
+~/kenlm/build$> make -j $(nproc)
+
+
+git clone https://github.com/facebookresearch/flashlight.git
+ mkdir build
+  cd build
+ 
+ cd wav2letter
+  mkdir build
+ cmake .. -DCMAKE_BUILD_TYPE=Release -DCRITERION_BACKEND=CUDA -DArrayFire_DIR=/home/wel/wav2letter_install/arrayfire/share/ArrayFire/cmake/ -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda
+ make -j4
